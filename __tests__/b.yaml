@@ -1,0 +1,8 @@
+components:
+  schemas:
+    TestResponse:
+      properties:
+        TestUpperCamel:
+          type: string
+        testLowerCamel:
+          type: string
