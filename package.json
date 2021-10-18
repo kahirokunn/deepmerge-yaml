@@ -59,7 +59,7 @@
     ]
   },
   "dependencies": {
-    "commander": "^7.0.0",
+    "commander": "^8.0.0",
     "deepmerge": "^4.2.2",
     "js-yaml": "^4.0.0"
   },
