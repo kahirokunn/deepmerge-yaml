@@ -70,7 +70,7 @@
     "@types/commander": "2.12.2",
     "@types/jest": "26.0.20",
     "@types/js-yaml": "4.0.0",
-    "@types/node": "14.14.22",
+    "@types/node": "14.18.18",
     "@typescript-eslint/eslint-plugin": "4.14.1",
     "@typescript-eslint/parser": "4.14.1",
     "babel-jest": "26.6.3",
