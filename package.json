@@ -64,9 +64,9 @@
     "js-yaml": "^4.0.0"
   },
   "devDependencies": {
-    "@babel/core": "7.12.10",
-    "@babel/preset-env": "7.12.11",
-    "@babel/preset-typescript": "7.12.7",
+    "@babel/core": "7.17.10",
+    "@babel/preset-env": "7.17.10",
+    "@babel/preset-typescript": "7.16.7",
     "@types/commander": "2.12.2",
     "@types/jest": "26.0.20",
     "@types/js-yaml": "4.0.0",
