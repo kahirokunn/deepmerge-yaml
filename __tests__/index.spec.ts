@@ -10,13 +10,26 @@ const b = fs
   .readFileSync(path.resolve(__dirname, './b.yaml'))
   .toString()
   .trim();
-const output = fs
-  .readFileSync(path.resolve(__dirname, './output.yaml'))
+const c = fs
+  .readFileSync(path.resolve(__dirname, './c.yaml'))
+  .toString()
+  .trim();
+const outputAB = fs
+  .readFileSync(path.resolve(__dirname, './output-ab.yaml'))
+  .toString()
+  .trim();
+const outputABC = fs
+  .readFileSync(path.resolve(__dirname, './output-abc.yaml'))
   .toString()
   .trim();
 
 test('basic', () => {
   const result = deepmergeYaml(a, b).trim();
 
-  expect(result).toBe(output);
+  expect(result).toBe(outputAB);
+});
+test('3 files', () => {
+  const result = deepmergeYaml(a, b, c).trim();
+
+  expect(result).toBe(outputABC);
 });
