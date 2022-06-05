@@ -14,6 +14,7 @@ const c = fs
   .readFileSync(path.resolve(__dirname, './c.yaml'))
   .toString()
   .trim();
+const outputA = a;
 const outputAB = fs
   .readFileSync(path.resolve(__dirname, './output-ab.yaml'))
   .toString()
@@ -23,7 +24,12 @@ const outputABC = fs
   .toString()
   .trim();
 
-test('basic', () => {
+test('1 file', () => {
+  const result = deepmergeYaml(a).trim();
+
+  expect(result).toBe(outputA);
+});
+test('2 files', () => {
   const result = deepmergeYaml(a, b).trim();
 
   expect(result).toBe(outputAB);
