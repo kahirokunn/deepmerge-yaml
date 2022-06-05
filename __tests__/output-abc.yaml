@@ -1,0 +1,41 @@
+info:
+  title: test
+  version: 0.0.1
+  license:
+    name: MIT
+  contact: {}
+openapi: 3.0.0
+components:
+  examples: {}
+  headers: {}
+  parameters: {}
+  requestBodies: {}
+  responses: {}
+  schemas:
+    TestResponse:
+      properties:
+        _embedded:
+          properties:
+            testNestedProperty:
+              properties:
+                _links:
+                  properties:
+                    self:
+                      $ref: '#/components/schemas/HalLink'
+                  required:
+                    - self
+                  type: object
+                firstNameKana:
+                  type: string
+          required:
+            - testNestedProperty
+        TestUpperCamel:
+          type: string
+        testLowerCamel:
+          type: string
+    TestRequest:
+      properties:
+        TestUpperCamel:
+          type: string
+        testLowerCamel:
+          type: string
