@@ -10,7 +10,7 @@
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:import/typescript",
-    "prettier/@typescript-eslint"
+    "prettier"
   ],
   "plugins": ["prettier", "import", "simple-import-sort", "unicorn", "@typescript-eslint"],
   "env": { "node": true, "es6": true },
