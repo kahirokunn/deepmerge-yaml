@@ -20,27 +20,16 @@ program
   .option('-o, --output <path>', 'write result to the path')
   .parse(process.argv);
 
-if (program.args.length !== 2) {
-  console.error('required 2 yaml path');
-  process.exit(1);
-} else {
-  const a = readFileSync(
-    path.resolve(process.cwd(), program.args[0]),
-  ).toString();
-  const b = readFileSync(
-    path.resolve(process.cwd(), program.args[1]),
-  ).toString();
-  const result = deepmergeYaml(a, b);
+const files = program.args.map((arg) =>
+  readFileSync(path.resolve(process.cwd(), arg)).toString(),
+);
+const result = deepmergeYaml(...files);
 
-  if ((program as any).opts().output) {
-    writeFile(
-      path.resolve(process.cwd(), (program as any).opts().output),
-      result,
-    )
-      .then(() => process.exit(0))
-      .catch(() => process.exit(1));
-  } else {
-    console.log(result);
-    process.exit(0);
-  }
+if ((program as any).opts().output) {
+  writeFile(path.resolve(process.cwd(), (program as any).opts().output), result)
+    .then(() => process.exit(0))
+    .catch(() => process.exit(1));
+} else {
+  console.log(result);
+  process.exit(0);
 }
